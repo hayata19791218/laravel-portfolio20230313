@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.index');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -51,7 +51,7 @@ Route::delete('/workDelete/{id}','AdminController@workDelete')->name('admin.work
 Route::put('/workUpdate/{work}','AdminController@workUpdate')->name('admin.workUpdate');
 
 //投稿記事一覧の表示
-Route::get('/index','AdminController@index')->name('admin.index');
+Route::get('/','AdminController@index')->name('admin.index');
 
 //my productの新規作成
 Route::get('/productCreate','AdminController@productCreate')->name('admin.productCreate');
