@@ -161,7 +161,7 @@
             <canvas id="canvas" class="canvas"></canvas>
             <h2 class="title">Holiday</h2>
           </div>
-          <p class="title-explain">新しい技術を学ぶのが好きで仕事前・仕事後・休みの日は大体勉強しています。<br>現在はJavaScript・Vue.js・Laravelの勉強をしています。<br>このサイトはLaravel・JavaScriptで作りました。<br>データベース設計もできないといけないと思ったのでER図のIE記法の勉強をしています。</p>
+          <p class="title-explain">新しい技術を学ぶのが好きで仕事前・仕事後・休みの日は大体勉強しています。<br>現在はJavaScript・Vue.js・Laravelの勉強をしています。<br>このサイトはLaravel・JavaScriptで作りました。<br>データベース設計もできないといけないと思ったのでER図のIE記法の勉強をしています。<br>このサイトはsorcetreeとGitを連携してssh接続でpush・pullして更新しています。</p>
         </div>
       </section>
 
