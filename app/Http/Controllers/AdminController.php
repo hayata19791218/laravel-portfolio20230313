@@ -87,7 +87,7 @@ class AdminController extends Controller
 
         $work->title = $inputs['title'];
         $work->url = $inputs['url'];
-        $work->slug = $work->url;
+        $work->slug = $request->url;
         $work->body = $inputs['body'];
         if($request->eyecatch){
             $original = $request->file('eyecatch')->getClientOriginalName();
@@ -162,6 +162,7 @@ class AdminController extends Controller
         ]);
 
         $product->title = $request->title;
+        $product->slug = $request->url;
         $product->body = $request->body;
         if($request->eyecatch){
             $original = $request->file('eyecatch')->getClientOriginalName();
