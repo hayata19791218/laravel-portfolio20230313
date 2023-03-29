@@ -79,5 +79,5 @@ Route::put('/productUpdate/{product}','AdminController@productUpdate')->name('ad
 
 //フォールバックルート
 Route::fallback(function () {
-	return redirect('/index');
+	return redirect('/');
 });
