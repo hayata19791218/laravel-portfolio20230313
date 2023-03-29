@@ -76,3 +76,8 @@ Route::delete('/productDelete/{id}','AdminController@productDelete')->name('admi
 
 //productの更新
 Route::put('/productUpdate/{product}','AdminController@productUpdate')->name('admin.productUpdate');
+
+//フォールバックルート
+Route::fallback(function () {
+	return redirect('/index');
+});
