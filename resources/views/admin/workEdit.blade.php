@@ -39,6 +39,7 @@
       </div>
       <div class="create-container">
         <a href="{{route('admin.admin')}}" class="admin-link"><button>管理画面へ戻る</button></a>
+        <a href="{{ route('admin.workShow',['work' => $work])}}" class="work-content">制作実績の内容に移動</a>
         <h2>制作実績の編集</h2>
         <form action="{{route('admin.workUpdate',['work' => $work])}}" method="post" enctype="multipart/form-data">
           @csrf

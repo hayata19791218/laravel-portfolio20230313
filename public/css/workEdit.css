@@ -48,6 +48,18 @@
   background-color: #0b5ba1;
   transition-duration: 0.3s;
 }
+.create-main .create-container .product-content {
+  display: block;
+  margin-top: 20px;
+  color: #000;
+  text-decoration: underline;
+}
+.create-main .create-container .work-content {
+  display: block;
+  margin-top: 20px;
+  color: #000;
+  text-decoration: underline;
+}
 .create-main .create-container .title {
   display: block;
   margin-top: 20px;

@@ -39,6 +39,7 @@
       </div>
       <div class="create-container">
         <a href="{{route('admin.admin')}}" class="admin-link"><button>管理画面へ戻る</button></a>
+        <a href="{{ route('admin.productShow',['product' => $product])}}" class="product-content">作った機能の内容に移動</a>
         <h2>自主制作の編集</h2>
         <form action="{{route('admin.productUpdate',['product' => $product])}}" method="post" enctype="multipart/form-data">
           @csrf
