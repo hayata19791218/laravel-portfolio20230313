@@ -111,7 +111,7 @@
             @endforeach
           </div>
           <div class="conscious">
-            <h3>コーディングをする時に意識している事</h3>
+            <h3>WordPressサイトのコーディングをする時に意識している事</h3>
             <ul>
               <li class="conscious-list">自分もしくは他人があとでサイトを修正する時にやりやすくする為にscssに<span>FLOCSS</span>を使用。ぐちゃぐちゃなscssの書き方をしない。</li>
               <li class="conscious-list">ページの読み込みが遅くならない様にする為に<span>Gulp</span>でcss・jsの圧縮と画像のwebp化をする。</li>
@@ -150,7 +150,7 @@
             <h2 class="title">About</h2>
             <div class="title-circle"></div>
           </div>
-          <p class="title-explain">早田恭平（はやたきょうへい）と言います。<br>熊本市出身で大阪市在住です。<br>元大学受験（医学部受験）の予備校講師でしたが少子化の影響で予備校がどんどん潰れて仕事がなくなっているので本職をWEB制作にしたのですがクライアントにあまりにも振り回されてグダグダだったのとバックエンドをやりたい気持ちがあったのでLaravelを勉強してWEB制作で使っていたJavaScriptと併せて仕事がしたいと思いシステム開発に移動しようと思いました。</p>
+          <p class="title-explain">早田恭平（はやたきょうへい）と言います。<br>熊本市出身で大阪市在住です。<br>元大学受験（医学部受験）の予備校講師でしたが少子化の影響で予備校がどんどん潰れて仕事がなくなっているので本職を変えようと思いました。<br>私は生徒とコミュニケーションを取るのを重視した授業をしていた為生徒と仲が良かったので生徒が開業した時にその人の病院のサイトを作りたいと思ったのがWEB制作を仕事にしようと思ったきっかけです。<br>バックエンドもやりたい気持ちがあったのでLaravelを勉強しています。</p>
         </div>
       </section>
 
@@ -161,7 +161,7 @@
             <canvas id="canvas" class="canvas"></canvas>
             <h2 class="title">Holiday</h2>
           </div>
-          <p class="title-explain">新しい技術を学ぶのが好きで仕事前・仕事後・休みの日は大体勉強しています。<br>現在はJavaScript・Vue.js・Laravelの勉強をしています。<br>このサイトはLaravel・JavaScriptで作りました。<br>データベース設計もできないといけないと思ったのでER図のIE記法の勉強しようとしています。<br>このサイトはsorcetreeとGitを連携してssh接続でpullして更新しています。</p>
+          <p class="title-explain">新しい技術を学ぶのが好きで仕事前・仕事後・休みの日は大体勉強しています。<br>現在はJavaScript・Vue.js・Laravelの勉強をしています。<br>このサイトはLaravel・JavaScriptで作りました。<br>このサイトはsorcetreeとGitを連携してssh接続でpullして更新しています。</p>
         </div>
       </section>
 
