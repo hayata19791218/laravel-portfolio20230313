@@ -6,7 +6,7 @@ window.addEventListener('load',() =>{
     const loadingOpacity = () =>{
         loading.classList.add('opacity');
     }
-    setTimeout(loadingOpacity,2400);
+    setTimeout(loadingOpacity,2300);
 });
 
 let counter = 0;
