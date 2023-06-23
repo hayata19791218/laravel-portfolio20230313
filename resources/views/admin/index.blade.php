@@ -172,7 +172,7 @@
             <h2 class="title">Blog</h2>
             <div class="title-circle"></div>
           </div>
-          <p class="title-explain">ブログで勉強した内容のアウトプットをしています。プログラミング関係はJavaScript・Vue.js・Laravel等の記事があります。</p>
+          <p class="title-explain">ブログにて勉強した内容のアウトプットをしています。プログラミング関係はJavaScript・Vue.js・Laravel等の記事があります。</p>
           <a href="https://newsite-make.com/"><img src="{{asset('images/blog.jpg')}}" alt=""></a>
         </div>
       </section>
