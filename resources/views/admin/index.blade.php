@@ -98,7 +98,7 @@
             <h2 class="title">Work</h2>
             <div class="title-circle"></div>
           </div>
-          <p class="title-sub">コーディング</p>
+          <p class="title-sub">WordPressサイトのコーディング</p>
           <p class="title-explain">実務で作成したサイトの一部を掲載します。画像の上にマウスを乗せるとタイトルが表示されます。</p>
           <div class="items">
             @foreach($works as $work)
