@@ -29,6 +29,7 @@
 }
 .show-main .body ul li {
   margin-bottom: 10px;
+  line-height: 1.3em;
 }
 .show-main .back {
   text-decoration: none;
