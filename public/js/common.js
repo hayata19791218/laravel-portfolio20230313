@@ -1,1 +1,152 @@
-(()=>{var e=document.getElementById("percent"),t=document.getElementById("loading");window.addEventListener("load",(function(){setTimeout((function(){t.classList.add("opacity")}),2300)}));var n=0,o=setInterval((function(){e.innerHTML="".concat(n,"%"),++n>100&&clearInterval(o)}),20);new Vivus("logo",{duration:100,start:"autostart",pathTimingFunction:Vivus.EASE_OUT},(function(e){e.el.classList.add("fill")}));for(var i=document.querySelectorAll(".title-circle"),a=function(e){window.addEventListener("scroll",(function(){var t=i[e].getBoundingClientRect().top,n=window.pageYOffset;n>t+n-window.innerHeight+150?i[e].classList.add("circle-fadein"):i[e].classList.remove("circle-fadein")}))},r=0;r<i.length;r++)a(r);var c=document.getElementById("topButton");window.addEventListener("scroll",(function(){window.pageYOffset>200?c.classList.add("button-fade"):c.classList.remove("button-fade")})),c.addEventListener("click",(function(){window.scroll({top:0,behavior:"smooth"})}));for(var d=document.querySelectorAll(".item"),s=function(e){window.addEventListener("scroll",(function(){var t=d[e].getBoundingClientRect().top,n=window.pageYOffset;n>t+n-window.innerHeight+150?d[e].classList.add("item-fadein"):d[e].classList.remove("item-fadein")}))},l=0;l<d.length;l++)s(l);for(var u=document.querySelectorAll(".conscious-list"),f=function(e){window.addEventListener("scroll",(function(){var t=u[e].getBoundingClientRect().top,n=window.pageYOffset;n>t+n-window.innerHeight+150?u[e].classList.add("conscious-fadein"):u[e].classList.remove("conscious-fadein")}))},w=0;w<u.length;w++)f(w);window.addEventListener("load",(function(){var e=new THREE.Scene,t=new THREE.PerspectiveCamera(35,1);t.position.set(.5,.5,1e3);var n=new THREE.IcosahedronGeometry(300,1),o=new THREE.MeshBasicMaterial({color:287160,wireframe:!0}),i=new THREE.Mesh(n,o);e.add(i);var a=new THREE.WebGLRenderer({canvas:document.querySelector("#canvas"),alpha:!0});a.setClearColor(0,0),a.setPixelRatio(window.devicePixelRatio),a.setSize(100,100),function n(){i.rotation.x+=.003,i.rotation.y+=.01,a.render(e,t),requestAnimationFrame(n)}()}));for(var v=document.querySelectorAll('a[href^="#"]'),m=function(e){v[e].addEventListener("click",(function(t){t.preventDefault();var n=v[e].getAttribute("href"),o=document.getElementById(n.replace("#","")).getBoundingClientRect().top;window.scrollTo({top:o,behavior:"smooth"})}))},g=0;g<v.length;g++)m(g)})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!********************************!*\
+  !*** ./resources/js/common.js ***!
+  \********************************/
+//ローディング
+var percent = document.getElementById('percent');
+var loading = document.getElementById('loading');
+window.addEventListener('load', function () {
+  var loadingOpacity = function loadingOpacity() {
+    loading.classList.add('opacity');
+  };
+  setTimeout(loadingOpacity, 2300);
+});
+var counter = 0;
+var timer = setInterval(function () {
+  percent.innerHTML = "".concat(counter, "%");
+  counter++;
+  if (counter > 100) clearInterval(timer);
+}, 20);
+
+//svgのアニメーション
+new Vivus('logo', {
+  duration: 100,
+  start: 'autostart',
+  pathTimingFunction: Vivus.EASE_OUT
+}, function (obj) {
+  obj.el.classList.add('fill');
+});
+
+//円がフェードイン
+var circleFadeIn = document.querySelectorAll('.title-circle');
+var _loop = function _loop(i) {
+  window.addEventListener('scroll', function () {
+    var rect = circleFadeIn[i].getBoundingClientRect().top;
+    var scroll = window.pageYOffset;
+    var offset = rect + scroll;
+    var windowHeight = window.innerHeight;
+    if (scroll > offset - windowHeight + 150) {
+      circleFadeIn[i].classList.add('circle-fadein');
+    } else {
+      circleFadeIn[i].classList.remove('circle-fadein');
+    }
+  });
+};
+for (var i = 0; i < circleFadeIn.length; i++) {
+  _loop(i);
+}
+
+// トップに戻るボタン
+var topButton = document.getElementById('topButton');
+window.addEventListener('scroll', function () {
+  var scroll = window.pageYOffset;
+  if (scroll > 200) {
+    topButton.classList.add('button-fade');
+  } else {
+    topButton.classList.remove('button-fade');
+  }
+});
+topButton.addEventListener('click', function () {
+  window.scroll({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// フェードイン
+var itemFadeIn = document.querySelectorAll('.item');
+var _loop2 = function _loop2(_i) {
+  window.addEventListener('scroll', function () {
+    var rect = itemFadeIn[_i].getBoundingClientRect().top;
+    var scroll = window.pageYOffset;
+    var offset = rect + scroll;
+    var windowHeight = window.innerHeight;
+    if (scroll > offset - windowHeight + 150) {
+      itemFadeIn[_i].classList.add('item-fadein');
+    } else {
+      itemFadeIn[_i].classList.remove('item-fadein');
+    }
+  });
+};
+for (var _i = 0; _i < itemFadeIn.length; _i++) {
+  _loop2(_i);
+}
+var consciousFadeIn = document.querySelectorAll('.conscious-list');
+var _loop3 = function _loop3(_i2) {
+  window.addEventListener('scroll', function () {
+    var rect = consciousFadeIn[_i2].getBoundingClientRect().top;
+    var scroll = window.pageYOffset;
+    var offset = rect + scroll;
+    var windowHeight = window.innerHeight;
+    if (scroll > offset - windowHeight + 150) {
+      consciousFadeIn[_i2].classList.add('conscious-fadein');
+    } else {
+      consciousFadeIn[_i2].classList.remove('conscious-fadein');
+    }
+  });
+};
+for (var _i2 = 0; _i2 < consciousFadeIn.length; _i2++) {
+  _loop3(_i2);
+}
+
+// Holidayの上にあるポリゴン
+window.addEventListener('load', init);
+function init() {
+  var width = 100;
+  var height = 100;
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(35, width / height);
+  camera.position.set(0.5, 0.5, +1000);
+  var geometry = new THREE.IcosahedronGeometry(300, 1);
+  var material = new THREE.MeshBasicMaterial({
+    color: 0x0461b8,
+    wireframe: true
+  });
+  var box = new THREE.Mesh(geometry, material);
+  scene.add(box);
+  var renderer = new THREE.WebGLRenderer({
+    canvas: document.querySelector('#canvas'),
+    alpha: true
+  });
+  renderer.setClearColor(0x000000, 0);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  renderer.setSize(width, height);
+  function animate() {
+    box.rotation.x += 0.003;
+    box.rotation.y += 0.01;
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  animate();
+}
+
+// スムーススクロール
+var smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
+var _loop4 = function _loop4(_i3) {
+  smoothScrollTrigger[_i3].addEventListener('click', function (e) {
+    e.preventDefault();
+    var href = smoothScrollTrigger[_i3].getAttribute('href');
+    var targetElement = document.getElementById(href.replace('#', ''));
+    var rect = targetElement.getBoundingClientRect().top;
+    window.scrollTo({
+      top: rect,
+      behavior: 'smooth'
+    });
+  });
+};
+for (var _i3 = 0; _i3 < smoothScrollTrigger.length; _i3++) {
+  _loop4(_i3);
+}
+/******/ })()
+;
