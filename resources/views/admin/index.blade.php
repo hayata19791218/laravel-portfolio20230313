@@ -88,7 +88,7 @@
             </ul>
           </nav>
         </div>
-        <h2>Kyohei Hayata<br><span>FrontEnd && BackEnd</span></h2>
+        <h2>Kyohei Hayata<br><span>BackEnd</span></h2>
       </div>
 
       <!-- Work -->
