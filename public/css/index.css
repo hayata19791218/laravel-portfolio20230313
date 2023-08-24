@@ -9,6 +9,10 @@
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 20px;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  width: 100%;
 }
 .tool-bar a {
   color: #fff;

@@ -44,12 +44,12 @@
         <form action="{{route('admin.productStore')}}" method="post" enctype="multipart/form-data">
           @csrf
           <input class="title" name="title" type="text" placeholder="タイトルを追加" value="{{old('title')}}">
-          <p class="permalink">パーマリンク https://bakkagisaji.com/ <input class="slug" type="text" name="url" placeholder="slug"></p>
+          <p class="permalink">パーマリンク https://bakkagisaji.com/ <input class="slug" type="text" name="url" placeholder="slug" value="{{ old('url') }}"></p>
           <div class="body-container">
             <div class="summernote">
               <textarea name="body" id="summernote" cols="30" rows="10"> {{old('body')}}</textarea>
-              <button type="submit" class="release-button">公開</button>
-              <button type="submit" class="draft-button">下書き保存</button>
+              <button type="submit" name="release" class="release-button">公開</button>
+              <button type="submit" name="save" class="draft-button">下書き保存</button>
             </div>
             <div class="eyecatch">
               <h3>アイキャッチ画像</h3>

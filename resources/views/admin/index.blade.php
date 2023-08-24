@@ -132,12 +132,14 @@
           <p class="title-explain">Vue.jsで作ったページやLaravelの機能・案件です。画像の上にマウスを乗せるとタイトルが表示されます。</p>
           <div class="items">
             @foreach($products as $product)
+              @if($product->publish_flag === 1)
               <a href="{{ route('admin.productShow',['product' => $product])}}" class="item">
                 <div class="modal">
                   <p>{{$product->title}}</p>
                 </div>
                 <img src="{{ asset('storage/images/'.$product->eyecatch) }}" alt="">
               </a>
+              @endif
             @endforeach
           </div>
         </div>

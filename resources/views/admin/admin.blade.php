@@ -58,12 +58,20 @@
             <div class="body-container">
             <div class="category-container">
                 <p>タイトル</p>
+                <p>ステータス</p>
                 <p>日付</p>
             </div>
             @foreach($products as $product)
             <div class="post-edit-delete-container">
                 <div class="post">
                 <p>{{$product->title}}</p>
+                <p>
+                    @if($product->publish_flag === 0)
+                    下書き
+                    @else
+                    公開中
+                    @endif
+                </p>
                 <p>{{$product->created_at}}</p>
                 </div>
                 <div class="edit-delete">

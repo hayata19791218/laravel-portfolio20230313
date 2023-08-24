@@ -122,24 +122,37 @@ class AdminController extends Controller
         return view('admin.productCreate');
     }
     
-    public function productStore(Request $request){
-        $inputs = $request->validate([
-            'title' => 'required',
-            'url' => 'required',
-            'body' => 'required',
-            'eyecatch' => 'required|max:1024',
-        ]);
-        $product = new Product();
-        $product->title = $inputs['title'];
-        $product->url = $inputs['url'];
-        $product->slug = $product->url;
-        $product->body = $inputs['body'];
-        $original = $request->file('eyecatch')->getClientOriginalName();
-        $name = date('Ymd_His').'_'.$original;
-        $request->file('eyecatch')->move('storage/images',$name);
-        $product->eyecatch = $name;
-        $product->save();
-        return back()->with('message','自主制作の投稿が完了しました');
+    // public function productStore(Request $request){
+    //     $inputs = $request->validate([
+    //         'title' => 'required',
+    //         'url' => 'required',
+    //         'body' => 'required',
+    //         'eyecatch' => 'required|max:1024',
+    //     ]);
+    //     $product = new Product();
+    //     $product->title = $inputs['title'];
+    //     $product->url = $inputs['url'];
+    //     $product->slug = $product->url;
+    //     $product->body = $inputs['body'];
+    //     $original = $request->file('eyecatch')->getClientOriginalName();
+    //     $name = date('Ymd_His').'_'.$original;
+    //     $request->file('eyecatch')->move('storage/images',$name);
+    //     $product->eyecatch = $name;
+    //     $product->save();
+    //     return back()->with('message','自主制作の投稿が完了しました');
+    // }
+
+    public function productStore(Product $product, Request $request){
+        switch(true){
+            case $request->has('save'):
+                $product->productStore($request);
+                return back()->with('message', '自主制作の下書き保存が完了しました');
+                break;
+            case $request->has('release');
+                $product->productRelease($request);
+                return back()->with('message', '自主制作の投稿が完了しました');
+                break;
+        }
     }
 
     public function productDelete($id){
@@ -155,22 +168,15 @@ class AdminController extends Controller
         return view('admin.productEdit',compact('product'));
     }
 
-    public function productUpdate(Request $request,Product $product){
-        $inputs = $request->validate([
-            'title' => 'required',
-            'body' => 'required',
-        ]);
-
-        $product->title = $request->title;
-        $product->slug = $request->url;
-        $product->body = $request->body;
-        if($request->eyecatch){
-            $original = $request->file('eyecatch')->getClientOriginalName();
-            $name = date('Ymd_His').'_'.$original;
-            $request->file('eyecatch')->move('storage/images',$name);
-            $product->eyecatch = $name;
+    public function productUpdate(Product $product, Request $request){
+        if($request->has('save')){
+            $product->productStore($request);
+            return redirect('admin');
+        }else if($request->has('release')){
+            $product->productRelease($request);
+            return redirect('admin');
         }
-        $product->save();
-        return back()->with('message','自主制作の更新が完了しました');
+
+
     }
 }

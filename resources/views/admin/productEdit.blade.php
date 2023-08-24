@@ -49,7 +49,13 @@
           <div class="body-container">
             <div class="summernote">
               <textarea name="body" id="summernote" cols="30" rows="10">{{old('body',$product->body)}}</textarea>
-              <button type="submit" class="release-button">更新</button>
+              
+              @if($product->publish_flag === 0)
+                <input type="submit" name="release" value="記事を公開する">
+                <input type="submit" name="save" value="記事を下書き保存する">
+              @else
+                <button type="submit" name="release" class="release-button">更新</button>
+              @endif
             </div>
             <div class="eyecatch">
               <h3>アイキャッチ画像</h3>
