@@ -19,6 +19,7 @@
       <a href="{{route('admin.admin')}}">管理画面</a>
     </div>
     @endauth
+    <div id="mouse-stalker"></div>
     <header class="index-header">
       <div class="loading" id="loading">
         <div class="wrap">
@@ -81,10 +82,10 @@
           <h1><img src="{{asset('images/logo.png')}}" alt=""></h1>
           <nav>
             <ul>
-              <li><a href="#about">About</a></li>
-              <li><a href="#work">Work</a></li>
-              <li><a href="#product">My Product</a></li>
-              <li><a href="#blog">Blog</a></li>
+              <li><a href="#about" class="hover">About</a></li>
+              <li><a href="#work" class="hover">Work</a></li>
+              <li><a href="#product" class="hover">My Product</a></li>
+              <li><a href="#blog" class="hover">Blog</a></li>
             </ul>
           </nav>
         </div>
@@ -102,7 +103,7 @@
           <p class="title-explain">実務で作成したサイトの一部を掲載します。画像の上にマウスを乗せるとタイトルが表示されます。</p>
           <div class="items">
             @foreach($works as $work)
-            <a href="{{ route('admin.workShow',['work' => $work])}}" class="item">
+            <a href="{{ route('admin.workShow',['work' => $work])}}" class="item hover">
               <div class="modal">
                 <p>{{$work->title}}</p>
               </div>
@@ -133,7 +134,7 @@
           <div class="items">
             @foreach($products as $product)
               @if($product->publish_flag === 1)
-              <a href="{{ route('admin.productShow',['product' => $product])}}" class="item">
+              <a href="{{ route('admin.productShow',['product' => $product])}}" class="item hover">
                 <div class="modal">
                   <p>{{$product->title}}</p>
                 </div>
@@ -175,7 +176,7 @@
             <div class="title-circle"></div>
           </div>
           <p class="title-explain">ブログにて勉強した内容のアウトプットをしています。プログラミング関係はJavaScript・Vue.js・Laravel等の記事があります。</p>
-          <a href="https://newsite-make.com/"><img src="{{asset('images/blog.jpg')}}" alt=""></a>
+          <a href="https://newsite-make.com/"><img src="{{asset('images/blog.jpg')}}" alt="" class="hover"></a>
         </div>
       </section>
       <script type="text/javascript" src="{{ asset('js/common.js') }}"></script>
