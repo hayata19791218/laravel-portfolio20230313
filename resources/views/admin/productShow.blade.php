@@ -14,10 +14,12 @@
   <body>
     <div id="mouse-stalker"></div>
     <main class="show-main">
+        @auth
         <div class="top-bar">
             <a href="{{route('admin.index')}}">サイトへ</a>
             <a href="{{route('admin.productEdit',['product' => $product])}}">制作実績の編集</a>
         </div>
+        @endauth
         <h1>{{$product->title}}</h1>
         <div class="body">
             {!!$product->body!!}
