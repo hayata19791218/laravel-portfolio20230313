@@ -33,6 +33,19 @@ for(let i = 0; i < link.length; i ++){
     });
 }
 
+//画面スクロールでアンダーラインの表示
+const border = document.querySelectorAll('.border-bottom');
+
+document.addEventListener('scroll', () => {
+    for(let i = 0; i < border.length; i++){
+        if(border[i].getBoundingClientRect().top < window.innerHeight*0.8){
+            border[i].classList.add('active');
+        }else{
+            border[i].classList.remove('active');
+        }
+    }
+})
+
 //svgのアニメーション
 new Vivus('logo', 
     {   duration: 100,

@@ -1,1 +1,22 @@
-(()=>{var e=document.getElementById("mouse-stalker"),t=document.querySelectorAll(".hover");document.addEventListener("mousemove",(function(t){e.style.transform="translate("+t.clientX+"px, "+t.clientY+"px)"}));for(var n=0;n<t.length;n++)t[n].addEventListener("mouseenter",(function(){e.classList.add("link-hover")})),t[n].addEventListener("mouseleave",(function(){e.classList.remove("link-hover")}))})();
+/******/ (() => { // webpackBootstrap
+var __webpack_exports__ = {};
+/*!**************************************!*\
+  !*** ./resources/js/work-product.js ***!
+  \**************************************/
+//マウスストーカー
+var mouse = document.getElementById('mouse-stalker');
+var link = document.querySelectorAll(".hover");
+document.addEventListener('mousemove', function (e) {
+  mouse.style.transform = 'translate(' + e.clientX + 'px, ' + e.clientY + 'px)';
+});
+//リンクにマウスオーバーすると円が大きくなる
+for (var i = 0; i < link.length; i++) {
+  link[i].addEventListener('mouseenter', function () {
+    mouse.classList.add('link-hover');
+  });
+  link[i].addEventListener('mouseleave', function () {
+    mouse.classList.remove('link-hover');
+  });
+}
+/******/ })()
+;

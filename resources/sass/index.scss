@@ -18,8 +18,20 @@
     transform: translate(0,0) scale(1.1);
     transition: all 0.3s ease-out;
     z-index: 9999;
-    
 }
+
+//画面スクロールで下線
+.border-bottom{
+    background: linear-gradient(transparent ,#71B5F5);
+    background-position: 0;
+    background-size: 0;
+    background-repeat: no-repeat;
+    transition: background 3s;
+    &.active{
+        background-size: 100%;
+    }
+}
+
 .link-hover {
     width: 50px!important;
     height: 50px!important;
